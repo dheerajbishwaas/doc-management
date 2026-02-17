@@ -78,7 +78,7 @@ class DocumentController extends Controller
             abort(403, 'You are not authorized to access this document');
         }
 
-        $filePath = storage_path('app/' . $document->filename);
+        $filePath = Storage::disk('private')->path($document->filename);
 
         if (!file_exists($filePath)) {
             abort(404, 'File not found on server');
@@ -94,7 +94,7 @@ class DocumentController extends Controller
             abort(403, 'Unauthorized access to document');
         }
 
-        $filePath = storage_path('app/' . $document->filename);
+        $filePath = Storage::disk('private')->path($document->filename);
 
         if (!file_exists($filePath)) {
             abort(404, 'File not found');
