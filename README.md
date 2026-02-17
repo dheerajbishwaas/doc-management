@@ -25,6 +25,10 @@ Users can upload documents, and Administrators can approve or reject them.
 
 3.  **Environment Configuration**
     - Copy `.env.example` to `.env`.
+    - Generate application key:
+        ```bash
+        php artisan key:generate
+        ```
     - Update DB credentials:
         ```ini
         DB_CONNECTION=pgsql
